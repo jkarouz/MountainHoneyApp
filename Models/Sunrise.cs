@@ -17,7 +17,14 @@ public partial class Sunrise
 
     public string? ContactNumber { get; set; }
 
+    public string? Place { get; set; }
+
+    public string? Payment { get; set; }
+    public string? Method { get; set; }
+
     public int? RentAmount { get; set; }
+    public int? OldAmount { get; set; }
+    public int? FullAmount { get; set; }
 
     public string? Comments { get; set; }
     public DateTime? DateOnlyTime { get; set; }
@@ -26,6 +33,7 @@ public partial class Sunrise
     public Sunrise()
     {
         FullName = Name + " " + Surname;
+        FullAmount = OldAmount - RentAmount;
   
     }
  

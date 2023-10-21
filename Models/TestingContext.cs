@@ -57,6 +57,11 @@ public partial class TestingContext : DbContext
             entity.Property(e => e.FullName).HasMaxLength(200);
             entity.Property(e => e.Comments).HasMaxLength(500);
             entity.Property(e => e.Name).HasMaxLength(50);
+            entity.Property(e => e.Place).HasMaxLength(50);
+            entity.Property(e => e.Payment).HasMaxLength(50);
+            entity.Property(e => e.Method).HasMaxLength(50);
+            entity.Property(e => e.OldAmount).HasMaxLength(50);
+            entity.Property(e => e.FullAmount).HasMaxLength(50);
             entity.Property(e => e.Surname).HasMaxLength(50);
         });
 

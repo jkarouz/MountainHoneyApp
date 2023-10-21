@@ -5,8 +5,6 @@
 }
 
 
-
-
 <h2 style="margin-left:300px">Information on tenant</h2>
 <div class="row form-group" style="margin-left:300px">
     <dl class="row">
@@ -28,11 +26,29 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FullName)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Method)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Method)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Payment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Payment)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdNumber)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ContactNumber)
@@ -40,11 +56,17 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ContactNumber)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Payment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Payment)
+        </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RentAmount)
+            @Html.DisplayNameFor(model => model.FullAmount)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RentAmount)
+            @Html.DisplayFor(model => model.FullAmount)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DateOnly)

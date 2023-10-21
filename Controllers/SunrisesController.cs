@@ -84,7 +84,12 @@ namespace MountainHoneyApp.Controllers
                     IdNumber = sunrise.IdNumber,
                     Comments = sunrise.Comments,
                     ContactNumber = sunrise.ContactNumber,
+                    Place = sunrise.Place,
                     RentAmount = sunrise.RentAmount,
+                    Payment = sunrise.Payment,
+                    Method = sunrise.Method,
+                    OldAmount = sunrise.OldAmount,
+                    FullAmount= sunrise.RentAmount-sunrise.OldAmount,
                     DateOnlyTime = sunrise.DateOnlyTime,
                 };
 
@@ -118,7 +123,7 @@ namespace MountainHoneyApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,Comments,FullName,IdNumber,ContactNumber,RentAmount,DateOnlyTime,DateOnly")] Sunrise sunrise)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,Comments,FullName,IdNumber,ContactNumber,Payment,Place,Method,RentAmount,DateOnlyTime,DateOnly")] Sunrise sunrise)
         {
             if (id != sunrise.Id)
             {
@@ -191,11 +196,15 @@ namespace MountainHoneyApp.Controllers
         }
         public IActionResult Export(int id,string Name)
         {
-            DataTable dt = new DataTable("Sunrise Accounts");
-            dt.Columns.AddRange(new DataColumn[4] {
+            DataTable dt = new DataTable("Accounts");
+            dt.Columns.AddRange(new DataColumn[8] {
                                         new DataColumn("FullName"),
                                         new DataColumn("Comments"),
                                         new DataColumn("RentAmount"),
+                                        new DataColumn("Place"),
+                                        new DataColumn("Payment"),
+                                        new DataColumn("Method"),
+                                        new DataColumn("FullAmount"),
                                         new DataColumn("DateOnly")});
 
             var Sunrise = from Sunrises in this.Context.Sunrises
@@ -205,7 +214,7 @@ namespace MountainHoneyApp.Controllers
 
             foreach (var sunrise in Sunrise)
             {
-              dt.Rows.Add(sunrise.FullName, sunrise.Comments, sunrise.RentAmount,sunrise.DateOnly);
+              dt.Rows.Add(sunrise.FullName, sunrise.Comments, sunrise.RentAmount, sunrise.Place, sunrise.Payment, sunrise.Method,sunrise.FullAmount,sunrise.DateOnly);
             }
 
             using (XLWorkbook wb = new XLWorkbook())
