@@ -25,10 +25,16 @@
                 @Html.DisplayNameFor(model => model.Comments)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ContactNumber)
+                @Html.DisplayNameFor(model => model.Method)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RentAmount)
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullAmount)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DateOnly)
@@ -46,10 +52,16 @@
                     @Html.DisplayFor(modelItem => item.Comments)
                 </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ContactNumber)
+                @Html.DisplayFor(modelItem => item.Method)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Place)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payment)
+                </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RentAmount)
+                    @Html.DisplayFor(modelItem => item.FullAmount)
             </td>
   
             <td>
